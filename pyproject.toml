@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rw-core"
+version = "0.1.0"
+description = "Biblioteca Python compartilhada (dashboards, normalizacao e exportacao) usada pelo Controle-integrado e pelo Painel-Ipiranga"
+requires-python = ">=3.11"
+dependencies = ["pandas", "streamlit", "xlsxwriter"]
+
+[tool.setuptools.packages.find]
+include = ["rw_core*"]
