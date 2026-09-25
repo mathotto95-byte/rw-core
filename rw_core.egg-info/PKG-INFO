@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: rw-core
+Version: 0.1.0
+Summary: Biblioteca Python compartilhada (dashboards, normalizacao e exportacao) usada pelo Controle-integrado e pelo Painel-Ipiranga
+Requires-Python: >=3.11
+Requires-Dist: pandas
+Requires-Dist: streamlit
+Requires-Dist: xlsxwriter

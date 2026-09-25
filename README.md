@@ -31,3 +31,17 @@ ser feitas aqui, num Pull Request, e entao propagadas aos projetos que dependem 
 
 Por padrao, os projetos apontam para a branch `main` (sempre a versao mais recente). Se um
 projeto precisar travar numa versao especifica, use `@<commit-sha>` no lugar de `@main`.
+
+## Contrato com o projeto consumidor
+
+Os modulos abaixo dependem de `src.config.settings`, que **continua vivendo em cada projeto**
+(nao faz parte deste pacote, de proposito — sao caminhos e configuracao especificos de cada
+deploy):
+
+- `rw_core.database.connection` — `DB_PATH`, `ensure_directories`
+- `rw_core.database.maintenance` — `BACKUPS_DIR`, `DATA_DIR`, `DB_PATH`, `EXPORTS_DIR`
+- `rw_core.importers.import_service` — `UPLOADS_DIR`, `load_config`
+- `rw_core.vale_pedagio.service` — `UPLOADS_DIR`, `load_config`
+
+Qualquer projeto que use estes modulos precisa manter um `src/config/settings.py` local que
+exponha esses nomes.
