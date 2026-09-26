@@ -1589,7 +1589,7 @@ def import_excel_file(
     progress_callback: Callable[[float, str], None] | None = None,
 ) -> dict[str, Any]:
     if base_type == MANUAL_TOLL_BASE_TYPE:
-        from src.vale_pedagio.service import import_manual_toll_update
+        from rw_core.vale_pedagio.service import import_manual_toll_update
 
         return import_manual_toll_update(file, sheet_name, username, user_role)
 

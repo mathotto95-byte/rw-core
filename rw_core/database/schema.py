@@ -2943,7 +2943,7 @@ def create_analysis_tables(conn) -> None:
         },
     )
     conn.execute("create index if not exists idx_painel_logs_painel_data on painel_processamento_logs(painel, data_hora_inicio desc)")
-    from src.database.migrations import create_modular_tables
+    from rw_core.database.migrations import create_modular_tables
 
     create_modular_tables(conn)
     ensure_unique_indexes(conn)

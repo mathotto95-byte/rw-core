@@ -45,3 +45,23 @@ deploy):
 
 Qualquer projeto que use estes modulos precisa manter um `src/config/settings.py` local que
 exponha esses nomes.
+
+## Terceiro lote
+
+Extraidos tambem `src/admin`, `src/analyses` (exceto `orchestrator.py` e `tripla_ipp.py`),
+`src/inconsistencies`, `src/ipiranga/validacao_tripla.py`, `src/modules` (a maior parte —
+faturamento, ipiranga, backup, migration, repository), `src/operational` (o restante),
+`src/security` (so o `__init__.py` — `auth.py` continua local, e diverge de proposito) e
+`src/shared`.
+
+**Ficaram de fora, de proposito, e continuam locais em cada projeto:**
+- `src/modules/faturamento/coupa/page.py` e `saldo.py` — ja divergiam entre os dois projetos.
+- `src/modules/faturamento/validacao_tripla_ipp/page.py`, `repository.py` e `service.py` —
+  dependem de `coupa.saldo`, que diverge; por tabela, tambem `src/analyses/orchestrator.py`
+  e `src/analyses/tripla_ipp.py`, que dependem desse `repository.py`.
+- `src/config/settings.py`, `src/security/auth.py`, `src/database/backup.py`,
+  `automatic_backup.py`, `local_zip_restore.py`, `src/ipiranga/service.py` — o que ja
+  divergia desde o primeiro relatorio.
+
+Se um dia o Coupa parar de divergir entre os dois projetos, esse cluster de 5 arquivos pode
+ser reavaliado para extracao.

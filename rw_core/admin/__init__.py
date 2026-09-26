@@ -1,0 +1,1 @@
+"""Ferramentas administrativas read-only."""

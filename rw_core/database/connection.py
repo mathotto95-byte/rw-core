@@ -607,6 +607,6 @@ def upsert(table: str, payload: dict[str, Any], conflict_columns: list[str] | tu
 
 
 def init_database() -> None:
-    from src.database.schema import initialize_database
+    from rw_core.database.schema import initialize_database
 
     initialize_database()

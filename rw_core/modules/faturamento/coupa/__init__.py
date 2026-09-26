@@ -1,0 +1,2 @@
+"""Coupa no módulo Faturamento."""
+
