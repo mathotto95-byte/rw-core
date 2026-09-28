@@ -8,6 +8,8 @@ from rw_core.utils.timezone import brasilia_now, brasilia_now_iso
 from pathlib import Path
 from typing import Any, BinaryIO, Callable
 
+import pandas as pd
+
 from src.config.settings import UPLOADS_DIR, load_config
 from rw_core.database.connection import get_connection
 from rw_core.database.schema import BASE_TABLES
